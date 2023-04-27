@@ -1,0 +1,14 @@
+{
+    "extensionDescription": {
+        "message": "An extension with which you can solve any worksheet.",
+        "description": "Description of the extension."
+    },
+    "solveWorksheet": {
+        "message": "Solve this worksheet",
+        "description": "The text of the button that solves the worksheet."
+    },
+    "checkSolution": {
+        "message": "Check the solution",
+        "description": "The text of the button that checks the solution."
+    }
+}

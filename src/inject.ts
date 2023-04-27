@@ -1,0 +1,41 @@
+import { Messages } from "./constants";
+import { getElementsArray } from "./utils";
+
+declare global {
+    interface Window {
+        contenidorellenado: string; // [["answer1", 0, ...], ["answer2", 1, ...]]
+        comprobarRespuestas(numero: 0 | 1): void; // solve worksheet function
+    }
+}
+
+document.body.oncontextmenu = null;
+
+function hideHintText() {
+    const classNames = ["joindiv", "dragablediv", "dropdiv"];
+
+    const elements = getElementsArray(classNames) as HTMLDivElement[];
+
+    for (const element of elements) {
+        element.style.color = "transparent";
+    }
+}
+
+const handleMessage = (event: MessageEvent) => {
+    const { message } = event.data;
+
+    switch (message) {
+        case Messages.solveWorksheet:
+            window.postMessage({
+                message: Messages.holdAnswers,
+                answers: window.contenidorellenado,
+            });
+            break;
+
+        case Messages.checkSolution:
+            hideHintText();
+            window.comprobarRespuestas(1);
+            break;
+    }
+};
+
+window.addEventListener("message", handleMessage);

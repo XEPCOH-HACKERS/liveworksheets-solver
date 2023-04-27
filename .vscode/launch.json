@@ -1,0 +1,30 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "[Chrome] Run extension",
+            "url": "https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Telling_the_time/The_hours_ub184zs",
+            "runtimeArgs": ["--load-extension=${workspaceFolder}/dist/chrome"]
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "[Firefox] Run extension",
+            "url": "https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Telling_the_time/The_hours_ub184zs",
+            "addonPath": "${workspaceFolder}/dist/firefox"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "[Edge] Run extension",
+            "url": "https://www.liveworksheets.com/worksheets/en/English_as_a_Second_Language_(ESL)/Telling_the_time/The_hours_ub184zs",
+            "runtimeArgs": ["--load-extension=${workspaceFolder}/dist/chrome"]
+        }
+    ]
+}

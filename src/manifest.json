@@ -1,0 +1,44 @@
+{
+    "name": "Liveworksheets Solver",
+    "description": "__MSG_extensionDescription__",
+    "version": "1.0.0",
+    "default_locale": "en",
+    "icons": {
+        "16": "images/favicon-16x16.png",
+        "32": "images/favicon-32x32.png",
+        "64": "images/favicon-64x64.png",
+        "128": "images/favicon-128x128.png"
+    },
+
+    "__chrome__manifest_version": 3,
+    "__firefox__manifest_version": 2,
+
+    "permissions": ["activeTab", "contextMenus"],
+    "__chrome__action": {},
+    "__firefox__browser_action": {},
+
+    "__chrome__background": {
+        "service_worker": "background.js"
+    },
+
+    "__firefox__background": {
+        "scripts": ["background.js"]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.liveworksheets.com/*"],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ],
+
+    "__chrome__web_accessible_resources": [
+        {
+            "resources": ["inject.js"],
+            "matches": ["*://*.liveworksheets.com/*"]
+        }
+    ],
+
+    "__firefox__web_accessible_resources": ["inject.js"]
+}

@@ -1,0 +1,14 @@
+{
+    "extensionDescription": {
+        "message": "Розширення, за допомогою якого ви можете вирішити будь-який worksheet.",
+        "description": "Description of the extension."
+    },
+    "solveWorksheet": {
+        "message": "Вирішити цей worksheet",
+        "description": "The text of the button that solves the worksheet."
+    },
+    "checkSolution": {
+        "message": "Перевірити відповідь",
+        "description": "The text of the button that checks the solution."
+    }
+}
