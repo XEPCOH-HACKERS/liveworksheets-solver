@@ -1,15 +1,16 @@
 {
     "name": "liveworksheets-solver",
     "version": "1.0.0",
-    "description": "nah",
+    "description": "нє",
     "scripts": {
         "build": "npm run build:chromium && npm run build:firefox",
         "build:chromium": "webextension-toolbox build chrome -s ./src",
         "dev:chromium": "webextension-toolbox dev chrome -s ./src",
         "build:firefox": "webextension-toolbox build firefox -s ./src",
-        "dev:firefox": "webextension-toolbox dev firefox -s ./src -p 35730"
+        "dev:firefox": "webextension-toolbox dev firefox -s ./src -p 35730",
+        "lint": "npx eslint ./src",
+        "format": "npx prettier ./src -w"
     },
-    "keywords": [],
     "author": "Hacker from XEPCOH",
     "license": "MIT",
     "devDependencies": {
@@ -19,12 +20,13 @@
         "@typescript-eslint/parser": "^5.56.0",
         "@webextension-toolbox/webextension-toolbox": "^6.0.0",
         "eslint": "^8.36.0",
+        "eslint-config-prettier": "^8.8.0",
         "eslint-config-standard-with-typescript": "^34.0.1",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-n": "^15.6.1",
+        "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-promise": "^6.1.1",
-        "ignore-loader": "^0.1.2",
-        "ts-loader": "^9.4.2",
+        "prettier": "^2.8.8",
         "typescript": "^5.0.2"
     }
 }
