@@ -8,7 +8,7 @@
         "description": "The text of the button that solves the worksheet."
     },
     "checkSolution": {
-        "message": "Перевірити відповідь",
+        "message": "Перевірити розв'язання",
         "description": "The text of the button that checks the solution."
     }
 }
