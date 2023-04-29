@@ -1,3 +1,5 @@
+import { getElementsArray } from "./utils";
+
 type AnswerArray = (string | number)[];
 
 type ExerciseType =
@@ -17,12 +19,10 @@ type Exercise = {
     answer: string;
 };
 
-import { getElementsArray } from "./utils";
-
 export default function solveWorksheet(
     contenidorellenado: AnswerArray[]
 ): void {
-    const exercises = getExercisesWithAnswers(contenidorellenado);
+    const exercises: Exercise[] = getExercisesWithAnswers(contenidorellenado);
 
     for (const exercise of exercises) {
         const { element, answer } = exercise;
@@ -54,7 +54,7 @@ function getExercisesWithAnswers(
 ): Exercise[] {
     const exercises: Exercise[] = [];
 
-    const classNames = [
+    const classNames: string[] = [
         "editablediv",
         "selectbox",
         "selectablediv",
@@ -67,7 +67,7 @@ function getExercisesWithAnswers(
     const elements = getElementsArray(classNames) as ExerciseElement[];
 
     for (const element of elements) {
-        const answer = getAnswer(element, contenidorellenado);
+        const answer: string = getAnswer(element, contenidorellenado);
         exercises.push({
             type: element.className as ExerciseType,
             element,
@@ -80,7 +80,7 @@ function getExercisesWithAnswers(
 
 function getAnswer(element: HTMLElement, AnswerArray: AnswerArray[]): string {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const index = parseInt(element.id.match(/\d+/g)![0]);
+    const index: number = parseInt(element.id.match(/\d+/g)![0]);
     const rawAnswer = AnswerArray[index][0] as string;
 
     const answer: string = rawAnswer
@@ -97,8 +97,10 @@ function setEditableDiv(element: HTMLDivElement, answer: string): void {
 }
 
 function setSelectBox(element: HTMLSelectElement, answer: string): void {
-    const options = answer.split("/");
-    const selectIndex = options.findIndex((value) => value.startsWith("*"));
+    const options: string[] = answer.split("/");
+    const selectIndex: number = options.findIndex((value) =>
+        value.startsWith("*")
+    );
 
     element.selectedIndex = selectIndex + 1;
     element.blur();
@@ -123,6 +125,6 @@ function setDragableDiv(element: HTMLDivElement, answer: string): void {
     element.style.fontSize = "xx-large";
     element.style.userSelect = "none";
 
-    const isDragElement = exerciseType === "drag";
+    const isDragElement: boolean = exerciseType === "drag";
     element.style.color = isDragElement ? "blue" : "red";
 }

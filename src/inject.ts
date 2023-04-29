@@ -10,8 +10,8 @@ declare global {
 
 document.body.oncontextmenu = null;
 
-function hideHintText() {
-    const classNames = ["joindiv", "dragablediv", "dropdiv"];
+function hideHintText(): void {
+    const classNames: string[] = ["joindiv", "dragablediv", "dropdiv"];
 
     const elements = getElementsArray(classNames) as HTMLDivElement[];
 

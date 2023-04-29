@@ -5,7 +5,7 @@ export function injectScript(path: string): void {
 }
 
 export function getElementsArray(classNames: string[]): Element[] {
-    const elements = classNames.flatMap((className) =>
+    const elements: Element[] = classNames.flatMap((className) =>
         Array.from(document.querySelectorAll(`.${className}`))
     );
 
