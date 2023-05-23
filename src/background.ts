@@ -1,6 +1,6 @@
 import { ContextMenuItemIds, Messages } from "./constants";
 
-const createContextMenu = (id: string) => {
+const createContextMenu = (id: string): void => {
     chrome.contextMenus.create(
         {
             id: id,

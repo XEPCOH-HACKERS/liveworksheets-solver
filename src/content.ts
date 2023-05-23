@@ -7,13 +7,13 @@ const validMessages: string[] = [
     Messages.checkSolution,
 ];
 
-const handleRuntimeMessage = (message: string) => {
+const handleRuntimeMessage = (message: string): void => {
     if (validMessages.includes(message)) {
         window.postMessage({ message });
     }
 };
 
-const handleWindowMessage = (event: MessageEvent) => {
+const handleWindowMessage = (event: MessageEvent): void => {
     if (event.data.message === Messages.holdAnswers) {
         solveWorksheet(event.data.answers);
     }

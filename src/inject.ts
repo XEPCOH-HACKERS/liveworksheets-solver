@@ -20,7 +20,7 @@ function hideHintText(): void {
     }
 }
 
-const handleMessage = (event: MessageEvent) => {
+const handleMessage = (event: MessageEvent): void => {
     const { message } = event.data;
 
     switch (message) {
