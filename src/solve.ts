@@ -116,6 +116,7 @@ function setJoinDiv(element: HTMLDivElement, answer: string): void {
     element.textContent = answer;
     element.style.fontSize = "xx-large";
     element.style.userSelect = "none";
+    element.style.padding = ".5%";
     element.style.color = "green";
 }
 
@@ -124,6 +125,7 @@ function setDragableDiv(element: HTMLDivElement, answer: string): void {
     element.textContent = index;
     element.style.fontSize = "xx-large";
     element.style.userSelect = "none";
+    element.style.padding = ".5%";
 
     const isDragElement: boolean = exerciseType === "drag";
     element.style.color = isDragElement ? "blue" : "red";
