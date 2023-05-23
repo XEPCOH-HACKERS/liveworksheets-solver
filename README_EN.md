@@ -66,7 +66,7 @@ The second button (Check Solution) checks your worksheet without sending it to t
 
 Who needs this? Just take it and use it!
 
-Seriously, take it, write something useful, create a pool-request, and I'll take a look.
+Seriously, take it, write something useful, create a pull request, and I'll take a look.
 
 Before you commit something, run these commands:
 
